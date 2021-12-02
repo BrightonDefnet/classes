@@ -8,6 +8,7 @@
 #include <vector>
 #include "Media.h"
 #include "Movies.h"
+#include "Music.h"
 using namespace std;
 
 int main()
@@ -16,6 +17,7 @@ int main()
     vector<Media*> db;
     Media* media;
     Movies movies;
+    Music music;
     string action;
     bool running = true;
     bool valid;
@@ -24,18 +26,48 @@ int main()
     {
         cout << "\nenter an action (add, search, delete, quit)\n" << endl;
         cin >> action;
+        //add media
         if(action == "add")
         {
             valid = true;
             cout << "\nwhat kind of media do you want to enter? (movie, video, music)\n" << endl;
             cin >> action;
-            if(action == "movie") media = &movies;
-            else valid = false;
-            if(valid == true) media->ADD();
+            //movie
+            if(action == "movie")
+            {
+                media = &movies;
+                media->ADD();
+            }
+            //music
+            if(action == "music")
+            {
+                media = &music;
+                media->ADD();
+            }
         }
-        else if(action == "search") media->SEARCH();
-        else if(action == "delete") media->DELETE();
-        else if(action == "quit") running = false;
-        else cout << "please try again" << endl;
+        //search for media
+        if(action == "search")
+        {
+            string str;
+            cout << "\nenter title or year" << endl;
+            cin >> str;
+            media = &movies;
+            media->SEARCH(str);
+            media = &music;
+            media->SEARCH(str);
+        }
+        //delete media
+        if(action == "delete")
+        {
+            string str;
+            cout << "\nenter title or year" << endl;
+            cin >> str;
+            media = &movies;
+            media->DELETE(str);
+            media = &music;
+            media->DELETE(str);
+        }
+        //quit the program
+        if(action == "quit") running = false;
     }
 }

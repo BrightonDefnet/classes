@@ -28,15 +28,12 @@ void Movies::ADD()
 }
 
 //search by title
-void Movies::SEARCH()
+void Movies::SEARCH(string input)
 {
-    //get term to search for and search for it
-    cout << "\nenter title or year" << endl;
-    cin >> str;
     for(itr = list.begin(); itr < list.end(); itr++)
     {
         pos = distance(list.begin(), itr);
-        if(list.at(pos).title == str || list.at(pos).year == str)
+        if(list.at(pos).title == input || list.at(pos).year == input)
         {
             curMov = &list.at(pos);
             cout << "\nType: movie" << endl;
@@ -50,15 +47,12 @@ void Movies::SEARCH()
 }
 
 //delete an entry
-void Movies::DELETE()
+void Movies::DELETE(string input)
 {
-    //get term to search for and search for it
-    cout << "\nenter title or year" << endl;
-    cin >> str;
     for(itr = list.begin(); itr < list.end(); itr++)
     {
         pos = distance(list.begin(), itr);
-        if(list.at(pos).title == str || list.at(pos).year == str)
+        if(list.at(pos).title == input || list.at(pos).year == input)
         {
             curMov = &list.at(pos);
             cout << "\nType: movie" << endl;

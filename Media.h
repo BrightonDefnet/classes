@@ -10,8 +10,8 @@ class Media
     public:
         Media();
         virtual void ADD();
-        virtual void SEARCH();
-        virtual void DELETE();
+        virtual void SEARCH(string input);
+        virtual void DELETE(string input);
         
     private:
         int entries;

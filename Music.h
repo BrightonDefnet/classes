@@ -1,5 +1,5 @@
-#ifndef MOVIES_h
-#define MOVIES_h
+#ifndef MUSIC_h
+#define MUSIC_h
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -7,28 +7,28 @@
 #include "Media.h"
 using namespace std;
 
-class Movies : public Media
+class Music : public Media
 {
     public:
-        Movies();
+        Music();
         void ADD();
         void SEARCH(string);
         void DELETE(string);
 
     private:
-        struct movie
+        struct song
         {
             string title;
-            string director;
+            string artist;
             string year;
             string duration;
-            string rating;
+            string publisher;
         };
         string str;
         string str2;
         int pos;
-        movie* curMov;
-        vector<movie> list;
-        vector<movie>::iterator itr;
+        song* curtrack;
+        vector<song> list;
+        vector<song>::iterator itr;
 };
 #endif

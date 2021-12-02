@@ -14,13 +14,13 @@ void Media::ADD()
 }
 
 //search for media
-void Media::SEARCH()
+void Media::SEARCH(string input)
 {
 
 }
 
 //delete media
-void Media::DELETE()
+void Media::DELETE(string input)
 {
 
 }
