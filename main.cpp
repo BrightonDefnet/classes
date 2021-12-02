@@ -9,6 +9,7 @@
 #include "Media.h"
 #include "Movies.h"
 #include "Music.h"
+#include "VideoGames.h"
 using namespace std;
 
 int main()
@@ -18,6 +19,7 @@ int main()
     Media* media;
     Movies movies;
     Music music;
+    VideoGames game;
     string action;
     bool running = true;
     bool valid;
@@ -30,7 +32,7 @@ int main()
         if(action == "add")
         {
             valid = true;
-            cout << "\nwhat kind of media do you want to enter? (movie, video, music)\n" << endl;
+            cout << "\nwhat kind of media do you want to enter? (movie, game, music)\n" << endl;
             cin >> action;
             //movie
             if(action == "movie")
@@ -44,6 +46,12 @@ int main()
                 media = &music;
                 media->ADD();
             }
+            //video game
+            if(action == "game")
+            {
+                media = &game;
+                media->ADD();
+            }
         }
         //search for media
         if(action == "search")
@@ -55,6 +63,8 @@ int main()
             media->SEARCH(str);
             media = &music;
             media->SEARCH(str);
+            media = &game;
+            media->SEARCH(str);
         }
         //delete media
         if(action == "delete")
@@ -65,6 +75,8 @@ int main()
             media = &movies;
             media->DELETE(str);
             media = &music;
+            media->DELETE(str);
+            media = &game;
             media->DELETE(str);
         }
         //quit the program
