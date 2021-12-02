@@ -10,9 +10,8 @@ class Media
     public:
         Media();
         virtual void ADD();
-        virtual void SEARCHBYTITLE();
-        virtual void SEARCHBYDATE();
-        void DELETE();
+        virtual void SEARCH();
+        virtual void DELETE();
         
     private:
         int entries;

@@ -14,14 +14,9 @@ void Media::ADD()
 }
 
 //search for media
-void Media::SEARCHBYTITLE()
+void Media::SEARCH()
 {
 
-}
-
-void Media::SEARCHBYDATE()
-{
-    
 }
 
 //delete media

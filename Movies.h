@@ -11,7 +11,11 @@ class Movies : public Media
 {
     public:
         Movies();
-        string str;
+        void ADD();
+        void SEARCH();
+        void DELETE();
+
+    private:
         struct movie
         {
             string title;
@@ -20,13 +24,10 @@ class Movies : public Media
             string duration;
             string rating;
         };
+        string str;
+        string str2;
         int pos;
-        bool found;
         movie* curMov;
-        void ADD();
-        void SEARCHBYTITLE();
-
-    private:
         vector<movie> list;
         vector<movie>::iterator itr;
 };
